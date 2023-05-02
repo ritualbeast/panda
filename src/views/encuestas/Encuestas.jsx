@@ -1,19 +1,35 @@
 import React from 'react';
 import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/global.css';
+import '../../styles/global.css';
+import CrearEncuestas from './CrearEncuestas';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import EliminarEncuesta from './EliminarEncuestas';
 
 const Encuestas = () => {
-  return (
-    
-    <div>
-        <div className='encuestaContenedorBotones'>
-            <div className='encuestaButtonCrear'>
-                <button type="button" class="btn btn-primary">Crear encuesta desde cero</button>
 
-            </div>
+  const [showEliminarModal, setShowEliminarModal] = useState(false);
+
+  const handleEliminarEncuesta = () => {
+    setShowEliminarModal(true);
+  };
+
+
+
+  return (
+        <div>
+        <div className='encuestaContenedorTitulo'>
+          <div className='encuestaContenedorBotones'>
             <div className='encuestaButtonCrear'>
-                <button type="button" class="btn btn-primary">Usa una plantilla predefinida</button>
+              <Link to= 'crearEncuesta'
+              >
+                <button type="button">Crear encuesta desde cero</button>
+              </Link>
+            </div>
+          </div>
+            <div className='encuestaButtonCrear'>
+                <button type="button" >Usa una plantilla predefinida</button>
 
             </div>
 
@@ -39,8 +55,11 @@ const Encuestas = () => {
                 title={<i className="fas fa-ellipsis-v"></i>}
                 variant="outline-primary"
               >
+                
+                  <Dropdown.Item onClick={handleEliminarEncuesta}>Eliminar</Dropdown.Item>
+                 
                 <Dropdown.Item>Editar</Dropdown.Item>
-                <Dropdown.Item>Eliminar</Dropdown.Item>
+                
                 <Dropdown.Item>Ver</Dropdown.Item>
                 <Dropdown.Item>Duplicar</Dropdown.Item>
                 <Dropdown.Item>Compartir</Dropdown.Item>

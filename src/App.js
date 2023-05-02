@@ -1,13 +1,12 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './layouts/Layout'
-import Welcome from './views/Welcome';
-import Campana from './views/Campana';
-import Encuestas from './views/Encuestas';
-import Plantillas from './views/Plantillas';
-import Dashboard from './views/Dashboard';
-import Contactos from './views/Contactos';
+import Encuestas from './views/encuestas/Encuestas';
+import Dashboard from './views/dashboard/Dashboard';
+import Ipn from './views/ipn/Ipn';
 import Reportes from './views/Reportes';
+import CrearEncuestas from './views/encuestas/CrearEncuestas';
+import EliminarEncuestas from './views/encuestas/EliminarEncuestas';
 
 // create a new component called App
 
@@ -19,12 +18,13 @@ function App() {
           <Route path="/" element={<Layout />} >
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="encuestas" element={<Encuestas />} />
-            <Route path="campana" element={<Campana />} />
-            <Route path="plantillas" element={<Plantillas />} />
-           
-            <Route path="contactos" element={<Contactos />} />
+            <Route path="encuesta" element={<Encuestas />} />
+            <Route path="encuesta/crearEncuesta" element={<CrearEncuestas />} />
+            <Route path="encuesta/eliminarEncuesta" element={<EliminarEncuestas />} />
+            <Route path="ipn" element={<Ipn />} />
             <Route path="reportes" element={<Reportes />} />
+
+
 
 
           </Route>

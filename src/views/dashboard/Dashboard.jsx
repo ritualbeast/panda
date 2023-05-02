@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Menu from '../components/Menu'
+import Menu from '../../components/Menu'
 import {Row, Col, Container} from 'react-bootstrap'
 
 const Dashboard = () => {
