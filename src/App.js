@@ -7,6 +7,7 @@ import Ipn from './views/ipn/Ipn';
 import Reportes from './views/Reportes';
 import CrearEncuestas from './views/encuestas/CrearEncuestas';
 import EliminarEncuestas from './views/encuestas/EliminarEncuestas';
+import FormatoEncuesta from './views/encuestas/FormatoEncuesta';
 
 // create a new component called App
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="encuesta/eliminarEncuesta" element={<EliminarEncuestas />} />
             <Route path="ipn" element={<Ipn />} />
             <Route path="reportes" element={<Reportes />} />
+            <Route path="formatoEncuesta" element={<FormatoEncuesta />} />
 
 
 
